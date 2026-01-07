@@ -19,5 +19,26 @@
     "title": "INAB in-house analyses",
     "section": "Authors",
     "text": "Authors\n Nikos Pechlivanis    Natasa Anastasiadou"
+  },
+  {
+    "objectID": "qmd/data.html",
+    "href": "qmd/data.html",
+    "title": "Data & Metadata",
+    "section": "",
+    "text": "Bioinformatics tools are very strict about filenames, sample IDs, and metadata.\nEven one wrong character can:\n\nbreak pipelines\nmismatch samples\ncause failed downstream analyses (DESeq2, Seurat)\nmake reproducibility impossible\n\nSo, we require standardized naming."
+  },
+  {
+    "objectID": "qmd/data.html#data-cleaning",
+    "href": "qmd/data.html#data-cleaning",
+    "title": "Data & Metadata",
+    "section": "",
+    "text": "Bioinformatics tools are very strict about filenames, sample IDs, and metadata.\nEven one wrong character can:\n\nbreak pipelines\nmismatch samples\ncause failed downstream analyses (DESeq2, Seurat)\nmake reproducibility impossible\n\nSo, we require standardized naming."
+  },
+  {
+    "objectID": "qmd/data.html#common-naming-problems",
+    "href": "qmd/data.html#common-naming-problems",
+    "title": "Data & Metadata",
+    "section": "❌ Common Naming Problems",
+    "text": "❌ Common Naming Problems\nList of common errors found in metadata:\n\nDuplicate sample names (e.g., sample1 appearing twice)\nGreek characters (α, β, Α, Τ)\nSpaces in names (Sample 1, Control rep 2)\nSpecial characters (!, %, @, #, (, ), /)\nDifferent names for the same sample (CTRL1, Ctrl1, control_1)"
   }
 ]

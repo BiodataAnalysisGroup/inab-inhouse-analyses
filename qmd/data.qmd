@@ -1,3 +1,33 @@
 ---
 title: "Data & Metadata"
 ---
+
+## Data Cleaning
+
+Bioinformatics tools are very strict about filenames, sample IDs, and metadata.
+
+Even one wrong character can:
+
+-   break pipelines
+
+-   mismatch samples
+
+-   cause failed downstream analyses (DESeq2, Seurat)
+
+-   make reproducibility impossible
+
+So, we require **standardized naming**.
+
+## ❌ Common Naming Problems
+
+List of common **errors** found in metadata:
+
+-   Duplicate sample names (e.g., `sample1` appearing twice)
+
+-   Greek characters (`α`, `β`, `Α`, `Τ`)
+
+-   Spaces in names (`Sample 1`, `Control rep 2`)
+
+-   Special characters (`!`, `%`, `@`, `#`, `(`, `)`, `/`)
+
+-   Different names for the same sample (`CTRL1`, `Ctrl1`, `control_1`)
