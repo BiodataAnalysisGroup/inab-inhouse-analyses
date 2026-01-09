@@ -82,5 +82,40 @@
     "title": "Data & Metadata",
     "section": "✅ Naming Rules",
     "text": "✅ Naming Rules\nSample names MUST:\n\nuse English letters only\nnever change file names between FASTQ - metadata - results\nuse only letters, numbers, and underscores (A–Z, a–z, 0–9, _)\n✔ A01_Rep1\n❌A01-Rep(1)\nunique names\nbe consistent across files and folders"
+  },
+  {
+    "objectID": "qmd/unix.html",
+    "href": "qmd/unix.html",
+    "title": "Basic Unix Commands",
+    "section": "",
+    "text": "Most bioinformatics tools run in a terminal, not a graphical program.\nUnix commands let you:\n\nmove around folders\nlist and inspect files\nrun analysis programs"
+  },
+  {
+    "objectID": "qmd/unix.html#why-unix",
+    "href": "qmd/unix.html#why-unix",
+    "title": "Basic Unix Commands",
+    "section": "",
+    "text": "Most bioinformatics tools run in a terminal, not a graphical program.\nUnix commands let you:\n\nmove around folders\nlist and inspect files\nrun analysis programs"
+  },
+  {
+    "objectID": "qmd/unix.html#navigation-where-am-i",
+    "href": "qmd/unix.html#navigation-where-am-i",
+    "title": "Basic Unix Commands",
+    "section": "Navigation (Where am I?)",
+    "text": "Navigation (Where am I?)\nBefore you can analyze data, you must know how to move around the folders (directories).\n\npwd (Print Working Directory): Shows your current location.\nls (List): Shows files in the current folder.\ncd [folder] (Change Directory): Move into a folder.\ncd ..: Move one level up.\ncd ~: Go to your home directory.\nmkdir [name](Make Directory): Create a new folder.\ncp [file] [folder]: Copy file from the first argument (source) to the last (destination).\nmv [file] [folder]: Move file from the first argument (source) to the last (destination).\nrm [file]: Remove file. Caution: Removed files are gone."
+  },
+  {
+    "objectID": "qmd/unix.html#inspecting-files",
+    "href": "qmd/unix.html#inspecting-files",
+    "title": "Basic Unix Commands",
+    "section": "Inspecting Files",
+    "text": "Inspecting Files\nNever open a ~10GB FASTQ file in a text editor like Word or Notepad. It will crash. Use these instead:\n\nhead -n 20 file.txt: See the first 20 lines.\ntail -n 20 file.txt: See the last 20 lines (useful for checking if a log file finished correctly)."
+  },
+  {
+    "objectID": "index.html#author",
+    "href": "index.html#author",
+    "title": "INAB in-house analyses",
+    "section": "Author",
+    "text": "Author\n Natasa Anastasiadou"
   }
 ]

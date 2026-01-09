@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unix Commands – INAB In-House Analysis</title>
+<title>Basic Unix Commands – INAB In-House Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Unix Commands</h1>
+<h1 class="title">Basic Unix Commands</h1>
 </div>
 
 
@@ -144,8 +144,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="why-unix" class="level2">
+<h2 class="anchored" data-anchor-id="why-unix">Why Unix?</h2>
+<p>Most bioinformatics tools run in a <strong>terminal</strong>, not a graphical program.<br>
+Unix commands let you:</p>
+<ul>
+<li><p>move around folders</p></li>
+<li><p>list and inspect files</p></li>
+<li><p>run analysis programs</p></li>
+</ul>
+</section>
+<section id="navigation-where-am-i" class="level2">
+<h2 class="anchored" data-anchor-id="navigation-where-am-i">Navigation (Where am I?)</h2>
+<p>Before you can analyze data, you must know how to move around the folders (directories).</p>
+<ul>
+<li><code>pwd</code> (Print Working Directory): Shows your current location.</li>
+<li><code>ls</code> (List): Shows files in the current folder.</li>
+<li><code>cd [folder]</code> (Change Directory): Move into a folder.</li>
+<li><code>cd ..</code>: Move one level up.</li>
+<li><code>cd ~</code>: Go to your home directory.</li>
+<li><code>mkdir [name]</code>(Make Directory): Create a new folder.</li>
+<li><code>cp [file] [folder]</code>: Copy file from the first argument (source) to the last (destination).</li>
+<li><code>mv [file] [folder]</code>: Move file from the first argument (source) to the last (destination).</li>
+<li><code>rm [file]</code>: Remove file. Caution: Removed files are <strong>gone</strong>.</li>
+</ul>
+</section>
+<section id="inspecting-files" class="level2">
+<h2 class="anchored" data-anchor-id="inspecting-files">Inspecting Files</h2>
+<p><strong>Never</strong> open a ~10GB FASTQ file in a text editor like Word or Notepad. It will crash. Use these instead:</p>
+<ul>
+<li><code>head -n 20 file.txt</code>: See the first 20 lines.</li>
+<li><code>tail -n 20 file.txt</code>: See the last 20 lines (useful for checking if a log file finished correctly).</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
