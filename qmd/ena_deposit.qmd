@@ -29,9 +29,8 @@ cd /path/to/your/desirable/directory
 ```
 
 ``` bash
-md5sum /mnt/new_home/illumina/nextseq2000/name/of/the/run/V*fastq* | awk '{print $2, $1}' > filenames_and_checksums_date.txt
+md5sum /mnt/new_home/illumina/nextseq2000/name/of/the/run/V*fastq* | awk '{print $2, $1}' | paste - - > filenames_and_checksums_date.txt
 ```
-
 ## FTP Client to ENA
 
 Establish connection. Drag 'n' Drop fastq files.
