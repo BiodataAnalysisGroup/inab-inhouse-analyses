@@ -12,11 +12,11 @@ execute:
 
 Follow instructions here: [The Comprehensive R Archive Network](https://cloud.r-project.org/). If you cannot download R on your local machine please contact [inab-support\@certh.gr](mailto:inab-support@certh.gr).
 
-### Install RStudio
+#### Install RStudio
 
 Follow instructions here: [RStudio Desktop - Posit](https://posit.co/download/rstudio-desktop/) (*2: Install RStudio*). If you cannot download R on your local machine please contact [inab-support\@certh.gr](mailto:inab-support@certh.gr).\
 
-### Organize your data with the following structure
+#### Organize your data with the following structure
 
 Your data should be organized with the following format:
 
@@ -48,7 +48,7 @@ my_data/
 
 │  ├─ ...
 
-### Peptides file
+#### Peptides file
 
 The peptides file is a 3 – column table containing the following information:
 
@@ -59,51 +59,81 @@ The peptides file is a 3 – column table containing the following information:
 | HLA-A\*03:01 | AIAVPANVY  | Sample2 |
 | HLA-C\*07:01 | QSYSPPFSF  | Sample3 |
 
-### Steps to run RNAseq analysis:
+### Steps
+
+1.  Open RStudio
+
+2.  Set up your working directory – find the folder where your data are located and choose “Set as Working Directory”
+
+![](images/clipboard-1698585898.png){width="446"}
+
+3.  Download the necessary R scripts from here: [ERGO-helpers/R at main · BiodataAnalysisGroup/ERGO-helpers](https://github.com/BiodataAnalysisGroup/ERGO-helpers/tree/main/R) and place them into your working directory.
+
+4.  Open the **01.build_ergo_inputs.R** and update it with the right path of the data to run first (lines 14 + 15, remove the others if necessary).
+
+5.  Provide an output folder name of preference (line 17)
+
+6.  Run the script
+
+7.  When complete a folder will be created with the following structure:
+
+    my_output_folder/
+
+    ├─ ergo-ii-input_sample1.csv
+
+    ├─ ergo-ii-input_sample2.csv
+
+    ├─ ...
+
+### Steps to run ERGO:
 
 1.  Log in to the appropriate server:
 
     o 160.40.71.4
 
-2.  Identify where your NGS results (.fastq files) are located:
-
-    o e.g., /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study
-
-3.  Move to the your working directory:
+2.  Move to the your working directory:
 
     ``` bash
     cd /work/folder_of_each_user
     ```
 
-4.  Create a new analysis directory:
+3.  Create a new analysis directory:
 
     ``` bash
-    mkdir RNAseq_analysis_2025_05_21
+    mkdir ergo-ii_2026-01-07
     ```
 
-5.  Move to the your new analysis directory:
+4.  Move to the your new analysis directory:
 
     ``` bash
-    cd /work/RNAseq_analysis_2025_05_21
+    cd /work/ergo-ii_2026-01-07
     ```
 
-6.  Download script to your analysis directory
+5.  Download script to your analysis directory
 
     ``` bash
-    wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/star.sh
+    git clone https://github.com/BiodataAnalysisGroup/ERGO-helpers.git
     ```
+
+6.  Move to the your new analysis directory:
 
     ``` bash
-    wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/runSTAR.sh 
+    cd ERGO-helpers/ERGO-II
     ```
 
-7.  Create a SampleList (you have to update with the right path to your fastq files), for example:
+7.  Move to the your new analysis directory:
 
     ``` bash
-    ls -la /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+    mkdir data
     ```
 
-8.  Remove samples that should not be analyzed:
+8.  Create a sample list:
+
+    ``` bash
+    ls -la data/ | awk '{print $9}' | awk -F "_" '{print $2}' | awk -F "." '{print $1}' | sort | uniq > SampleList
+    ```
+
+9.  Remove samples that should not be analyzed:
 
     ``` bash
     nano SampleList
@@ -119,26 +149,28 @@ The peptides file is a 3 – column table containing the following information:
 
     o `Ctrl + x`: Exits and returns to the terminal
 
-9.  Run the analysis (you have to **update** with the right path):
+10. Run the analysis (you have to **update** with the right path):
 
     ``` bash
-    nohup bash runSTAR.sh \
-    /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 \
-    SampleList \
-    /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/star \
-    /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/gencode.v47.primary_assembly.basic.annotation.gtf \
-    16 \
-    &
+    bash runERGO-II.sh > run.sh
     ```
 
-10. After the analysis is completed, move **your folder** from /work to /mnt/new_home
-
-    ``` bash
-    cd ..
+    ``` bash         
+    nohup bash run.sh &
     ```
 
-    ``` bash
-    rsync -r \
-    RNAseq_analysis_2025_05_21 \
-    /mnt/new_home/stamatopoulos_research
-    ```
+11. When complete score files will be created inside the folder you have uploaded.
+
+### Filtering ERGO-II results
+
+1.  Go back to your working directory (RStudio).
+
+2.  Set it as your Working Directory (same steps as before).
+
+3.  Create a new folder (e.g. ergo-ii_scores) and download the resulted scores files from the server.
+
+4.  Open the **02.filter_ergo_scores.R** and update it with the right path of the data to run first (lines 9 + 10, remove the others if necessary).
+
+5.  Provide an output folder name of preference (line 12).
+
+6.  Run the script.
