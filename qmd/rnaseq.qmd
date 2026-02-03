@@ -4,7 +4,7 @@ execute:
   echo: false
 ---
 
-## How to run **RNAseq analyis** in the computational infrastructure of INAB
+## How to run **RNAseq analysis** in the computational infrastructure of INAB
 
 ### Steps to run RNAseq analysis:
 
