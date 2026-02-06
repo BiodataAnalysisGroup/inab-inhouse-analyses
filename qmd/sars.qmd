@@ -12,34 +12,33 @@ o 160.40.71.4
 
 ### 2 . Identify where your NGS results (.fastq files) are located
 
-o e.g., /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study
+o e.g., /mnt/new_home/stamatopoulos_research/SARS_2025_05_21
 
 ### 3. Move to the your working directory
 
 ``` bash
-cd /work/folder_of_each_user
+cd /work/covid19-runs
 ```
 
 ### 4. Create a new analysis directory
 
 ``` bash
-mkdir RNAseq_analysis_2025_05_21
+mkdir run-2025-10-23
 ```
 
-### 5. Move to the your new analysis directory
+### 5. Copy scripts to your analysis directory
 
-``` bash
-cd /work/RNAseq_analysis_2025_05_21
+```bash 
+cp *.sh run-2025-10-23
+```
+```bash
+cp *.R run-2025-10-23
 ```
 
-### 6. Download script to your analysis directory
+### 6. Move to the your new analysis directory
 
 ``` bash
-wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/star.sh
-```
-
-``` bash
-wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/runSTAR.sh 
+run-2025-10-23
 ```
 
 ### 7. Create a SampleList
@@ -47,7 +46,7 @@ wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/runSTA
 You have to **update** with the right path to your **fastq** **files.**
 
 ``` bash
-ls -la /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+ls -la /mnt/new_home/stamatopoulos_research/SARS_2025_05_21 | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
 ### 8. Remove samples that should not be analyzed
@@ -68,15 +67,13 @@ o `Ctrl + x`: Exits and returns to the terminal
 
 ### 9. Run the analysis 
 
-You have to **update** with the right path to your **fastq** **files.**
+You have to **update** with the right path.
 
 ``` bash
-nohup bash runSTAR.sh \
-/mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 \
+nohup bash runCOVID19.sh \
+/mnt/new_home/stamatopoulos_research/SARS_2025_05_21 \
 SampleList \
-/mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/star \
-/mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/gencode.v47.primary_assembly.basic.annotation.gtf \
-16 \
+/work/covid19-runs/ref/NC_045512.2.fasta \
 &
 ```
 
@@ -90,6 +87,6 @@ cd ..
 
 ``` bash
 rsync -r \
-RNAseq_analysis_2025_05_21 \
+SARS_2025_05_21 \
 /mnt/new_home/stamatopoulos_research
 ```
