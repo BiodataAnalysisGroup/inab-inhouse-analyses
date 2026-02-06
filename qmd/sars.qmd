@@ -4,7 +4,7 @@ execute:
   echo: false
 ---
 
-## Steps to run SARS-Cov-2 analysis
+## Steps to run the analysis
 
 ### 1. Log in to the appropriate server
 
