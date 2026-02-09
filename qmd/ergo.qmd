@@ -50,7 +50,7 @@ The peptides file is a 3 – column table containing the following information:
 
 ### 1. Open RStudio
 
-### 2. Set up your working directory 
+### 2. Set up your working directory
 
 Find the folder where your data are located and choose “Set as Working Directory”
 
@@ -60,7 +60,7 @@ Find the folder where your data are located and choose “Set as Working Directo
 
 Find them here: [ERGO-helpers/R at main · BiodataAnalysisGroup/ERGO-helpers](https://github.com/BiodataAnalysisGroup/ERGO-helpers/tree/main/R) and place them into your working directory.
 
-### 4. Open the **01.build_ergo_inputs.R** 
+### 4. Open the **01.build_ergo_inputs.R**
 
 Update it with the right path of the data to run first (lines 14 + 15, remove the others if necessary).
 
