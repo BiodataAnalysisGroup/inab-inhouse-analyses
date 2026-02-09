@@ -1,5 +1,5 @@
 ---
-title: "How to run SARS-Cov-2 analysis in the computational infrastructure of INAB"
+title: "How to run **SARS-Cov-2 analysis** in the computational infrastructure of INAB"
 execute:
   echo: false
 ---
@@ -28,10 +28,11 @@ mkdir run-2025-10-23
 
 ### 5. Copy scripts to your analysis directory
 
-```bash 
+``` bash
 cp *.sh run-2025-10-23
 ```
-```bash
+
+``` bash
 cp *.R run-2025-10-23
 ```
 
@@ -65,7 +66,7 @@ o `Ctrl + o and Enter`: Saves the modified SampleList
 
 o `Ctrl + x`: Exits and returns to the terminal
 
-### 9. Run the analysis 
+### 9. Run the analysis
 
 You have to **update** with the right path.
 
