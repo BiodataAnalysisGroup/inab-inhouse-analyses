@@ -34,7 +34,7 @@ You will learn:
 
 Your input is invaluable - whether it's suggesting a new chart/analysis or reporting a bug, we welcome and greatly appreciate your feedback!
 
-Feel free to open a [GitHub issue](https://github.com/natanast/immunovisual/issues) or contact us via `inab.bioinformatics@lists.certh.gr`.
+Feel free to open a [GitHub issue](https://github.com/BiodataAnalysisGroup/inab-inhouse-analyses) or **contact us via `inab.bioinformatics@lists.certh.gr`**.
 
 ## Authors
 
