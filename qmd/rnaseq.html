@@ -280,21 +280,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="run-the-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-analysis">9. Run the analysis:</h3>
 <p>You have to <strong>update</strong> with the right path.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bash runSTAR.sh <span class="dt">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 <span class="dt">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>SampleList <span class="dt">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/star <span class="dt">\</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/gencode.v47.primary_assembly.basic.annotation.gtf <span class="dt">\</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>16 <span class="dt">\</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bash runSTAR.sh /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 SampleList /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/star /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/gencode.v47.primary_assembly.basic.annotation.gtf 16 <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="after-the-analysis-is-completed" class="level3">
 <h3 class="anchored" data-anchor-id="after-the-analysis-is-completed">10. After the analysis is completed</h3>
 <p>Move your folder from <strong>/work</strong> to <strong>/mnt/new_home</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>RNAseq_analysis_2025_05_21 <span class="dt">\</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> RNAseq_analysis_2025_05_21 /mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
