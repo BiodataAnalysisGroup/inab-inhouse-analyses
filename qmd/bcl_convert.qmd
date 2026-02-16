@@ -38,7 +38,7 @@ cd /mnt/new_home/illumina_common_fastq
 
 o Any SFTP program (e.g., Bitvise SSH Client) can be used to transfer SampleSheet.csv. Just drag & drop the file from the left to the right window.
 
-### 6. Define a distinctive name for your folder. 
+### 6. Define a distinctive name for your folder.
 
 o The folder will contain the bcl-convert results (e.g., 2025_05_20_ERIC_study).
 
@@ -47,13 +47,7 @@ o Use it as input after the --output-directory argument (check the command below
 ### 7. Run the analysis:
 
 ``` bash
-nohup bcl-convert \
---bcl-input-directory /mnt/new_home/illumina/nextseq2000/240412_VH00795_60_AAFLFTVM5 \
---output-directory 2025_05_20_ERIC_study \
---sample-sheet SampleSheet.csv \
---no-lane-splitting true \
---bcl-sampleproject-subdirectories \
--–force > ./2025_05_20_ERIC_study.log 2>&1 &
+nohup bcl-convert --bcl-input-directory /mnt/new_home/illumina/nextseq2000/240412_VH00795_60_AAFLFTVM5 --output-directory 2025_05_20_ERIC_study --sample-sheet SampleSheet.csv --no-lane-splitting true --bcl-sampleproject-subdirectories true --force > ./2025_05_20_ERIC_study.log 2>&1 &
 ```
 
 ### 8. After the analysis is completed:
