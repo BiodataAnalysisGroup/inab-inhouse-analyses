@@ -61,13 +61,7 @@ e.g., 2025_05_21_ERIC_study
 ### 8. Now you can execute bases2fastq (version 2.1.0.1522407762), based on the following command:
 
 ```bash
-nohup bases2fastq \
---num-threads 16 \
---group-fastq \
---legacy-fastq \
---run-manifest RunManifest.csv \
-/mnt/new_home/element/AV240301/20250131_AV240301_SARSDIAGNOSIS/ \
-2025_05_21_ERIC_study/ > ./2025_05_21_ERIC_study.log 2>&1 &
+nohup bases2fastq --num-threads 16 --group-fastq --legacy-fastq --run-manifest RunManifest.csv /mnt/new_home/element/AV240301/20250131_AV240301_SARSDIAGNOSIS/ 2025_05_21_ERIC_study/ > ./2025_05_21_ERIC_study.log 2>&1 &
 ```
 
 ### 9. After the command for bases2fastq has run successfully, move your `RunManifest.csv` to the output folder:
@@ -81,7 +75,5 @@ mv RunManifest.csv 2025_05_21_ERIC_study
 For this reason, if we have run the analysis in a shared folder such as */mnt/new_home/element_common_fastq*, we should transfer the final files to our **own** subfolder, which will be located under our research group's folder.
 
 ```bash
-rsync -r \
-2025_05_21_ERIC_study \
-/mnt/new_home/stamatopoulos_research
+rsync -r 2025_05_21_ERIC_study /mnt/new_home/stamatopoulos_research
 ```

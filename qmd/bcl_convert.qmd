@@ -63,7 +63,5 @@ mv SampleSheet.csv 2025_05_20_ERIC_study
 For this reason, if we have run the analysis in a shared folder such as */mnt/new_home/illumina_common_fastq*, we should transfer the final files to our **own** subfolder, which will be located under our research group's folder.
 
 ``` bash
-rsync -r \
-/mnt/new_home/illumina_common_fastq/2025_05_20_ERIC_study \
-/mnt/new_home/stamatopoulos_research
+rsync -r /mnt/new_home/illumina_common_fastq/2025_05_20_ERIC_study /mnt/new_home/stamatopoulos_research
 ```
