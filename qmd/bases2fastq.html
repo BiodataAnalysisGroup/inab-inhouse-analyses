@@ -320,13 +320,7 @@ Note
 </section>
 <section id="now-you-can-execute-bases2fastq-version-2.1.0.1522407762-based-on-the-following-command" class="level3">
 <h3 class="anchored" data-anchor-id="now-you-can-execute-bases2fastq-version-2.1.0.1522407762-based-on-the-following-command">8. Now you can execute bases2fastq (version 2.1.0.1522407762), based on the following command:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bases2fastq <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>--num-threads 16 <span class="dt">\</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>--group-fastq <span class="dt">\</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>--legacy-fastq <span class="dt">\</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>--run-manifest RunManifest.csv <span class="dt">\</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/element/AV240301/20250131_AV240301_SARSDIAGNOSIS/ <span class="dt">\</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>2025_05_21_ERIC_study/ <span class="op">&gt;</span> ./2025_05_21_ERIC_study.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bases2fastq <span class="at">--num-threads</span> 16 <span class="at">--group-fastq</span> <span class="at">--legacy-fastq</span> <span class="at">--run-manifest</span> RunManifest.csv /mnt/new_home/element/AV240301/20250131_AV240301_SARSDIAGNOSIS/ 2025_05_21_ERIC_study/ <span class="op">&gt;</span> ./2025_05_21_ERIC_study.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="after-the-command-for-bases2fastq-has-run-successfully-move-your-runmanifest.csv-to-the-output-folder" class="level3">
 <h3 class="anchored" data-anchor-id="after-the-command-for-bases2fastq-has-run-successfully-move-your-runmanifest.csv-to-the-output-folder">9. After the command for bases2fastq has run successfully, move your <code>RunManifest.csv</code> to the output folder:</h3>
@@ -335,9 +329,7 @@ Note
 <section id="files-older-than-2-weeks-will-be-automatically-deleted-from-shared-folders" class="level3">
 <h3 class="anchored" data-anchor-id="files-older-than-2-weeks-will-be-automatically-deleted-from-shared-folders">10. <strong>Files older than 2 weeks</strong> will be automatically <strong>deleted</strong> from shared folders!</h3>
 <p>For this reason, if we have run the analysis in a shared folder such as <em>/mnt/new_home/element_common_fastq</em>, we should transfer the final files to our <strong>own</strong> subfolder, which will be located under our research group’s folder.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> <span class="dt">\</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>2025_05_21_ERIC_study <span class="dt">\</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> 2025_05_21_ERIC_study /mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

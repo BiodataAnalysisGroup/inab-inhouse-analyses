@@ -278,9 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="files-older-than-2-weeks-will-be-automatically-deleted-from-shared-folders" class="level3">
 <h3 class="anchored" data-anchor-id="files-older-than-2-weeks-will-be-automatically-deleted-from-shared-folders">9. Files older than <strong>2 weeks</strong> will be automatically <strong>deleted</strong> from shared folders!</h3>
 <p>For this reason, if we have run the analysis in a shared folder such as <em>/mnt/new_home/illumina_common_fastq</em>, we should transfer the final files to our <strong>own</strong> subfolder, which will be located under our research group’s folder.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> <span class="dt">\</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/illumina_common_fastq/2025_05_20_ERIC_study <span class="dt">\</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>/mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> /mnt/new_home/illumina_common_fastq/2025_05_20_ERIC_study /mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
