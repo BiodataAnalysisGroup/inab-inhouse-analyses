@@ -4,7 +4,7 @@ execute:
   echo: false
 ---
 
-## Steps to run the analysis
+## Steps to run the analysis:
 
 ### 1. Log in to the appropriate server:
 
@@ -14,22 +14,74 @@ o 160.40.71.4
 
 o e.g., /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study
 
-### 3. Move to the precmed working directory:
+### 3. Move to the your working directory:
 
 ``` bash
-cd /work/precmed/varCall/
+cd /work/folder_of_each_user
 ```
 
 ### 4. Create a new analysis directory:
 
 ``` bash
-mkdir run-2025-05-22-fastqc
+mkdir fastqc_2025_05_21
 ```
 
-### 5. Run the fastqc:
-
-You have to **update** with the right path your **fastq files.**
+### 5. Move to the your new analysis directory:
 
 ``` bash
-fastqc /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/*.fastq.gz -o run-2025-05-22-fastqc/
+cd /work/folder_of_each_user/fastqc_2025_05_21
+```
+
+### 6. Download script to your analysis directory
+
+``` bash
+wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/fastqc.sh
+```
+
+``` bash
+wget https://raw.githubusercontent.com/natanast/RNAseq_analysis/main/bash/runFASTQC.sh 
+```
+
+### 7. Create a SampleList
+
+You have to **update** with the right path to your **fastq files**.
+
+``` bash
+ls -la /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+```
+
+### 8. Remove samples that should not be analyzed:
+
+``` bash
+nano SampleList
+```
+
+In order to **edit** the SampleList use the following:
+
+o `Delete button`: Removes one letter
+
+o `Ctrl + k`: Removes a whole row
+
+o `Ctrl + o and Enter`: Saves the modified SampleList
+
+o `Ctrl + x`: Exits and returns to the terminal
+
+### 9. Run the analysis:
+
+You have to **update** with the right path.
+
+``` bash
+nohup bash runSTAR.sh /mnt/new_home/stamatopoulos_research/RNAseq_2025_05_21 SampleList 16 &
+```
+
+### 10. After the analysis is completed
+
+Move your folder from **/work** to **/mnt/new_home**
+
+``` bash
+cd ..
+```
+
+``` bash
+rsync -r fastqc_2025_05_21 /mnt/new_home/stamatopoulos_research
 ```

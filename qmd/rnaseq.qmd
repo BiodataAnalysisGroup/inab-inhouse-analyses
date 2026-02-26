@@ -29,7 +29,7 @@ mkdir RNAseq_analysis_2025_05_21
 ### 5. Move to the your new analysis directory:
 
 ``` bash
-cd /work/RNAseq_analysis_2025_05_21
+cd /work/folder_of_each_user/RNAseq_analysis_2025_05_21
 ```
 
 ### 6. Download script to your analysis directory
