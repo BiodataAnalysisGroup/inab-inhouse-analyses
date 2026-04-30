@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/unix.html</loc>
-    <lastmod>2026-02-26T10:23:26.920Z</lastmod>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/index.html</loc>
+    <lastmod>2026-04-30T11:07:10.049Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/data_analytics.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/fastqc.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/rnaseq.html</loc>
-    <lastmod>2026-02-26T10:23:26.920Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/ena_deposit.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/data_cleaning.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/index.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/merge_lanes.html</loc>
-    <lastmod>2026-02-26T10:23:26.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/bcl_convert.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/rnaseq.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/ergo.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/fastqc.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/sars.html</loc>
-    <lastmod>2026-02-26T10:23:26.920Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/unix.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/fastqc_old.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/bcl_convert.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
   <url>
     <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/bases2fastq.html</loc>
-    <lastmod>2026-02-26T10:23:26.919Z</lastmod>
+    <lastmod>2026-04-30T11:07:10.049Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/merge_lanes.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BiodataAnalysisGroup.github.io/inab-inhouse-analyses/qmd/data_cleaning.html</loc>
+    <lastmod>2026-04-30T11:07:10.050Z</lastmod>
   </url>
 </urlset>
