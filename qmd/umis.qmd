@@ -1,5 +1,5 @@
 ---
-title: "How to run **RNAseq analysis** in the computational infrastructure of INAB"
+title: "How to run **UMIs analysis** in the computational infrastructure of INAB"
 execute:
   echo: false
 ---
@@ -8,7 +8,7 @@ execute:
 
 ### 1. Log in to the appropriate server:
 
-o 160.40.71.4
+o 160.40.71.62, 160.40.71.64, 160.40.71.78
 
 ### 2. Identify where your NGS results (.fastq files) are located:
 
@@ -23,13 +23,13 @@ cd /work/folder_of_each_user
 ### 4. Create a new analysis directory:
 
 ``` bash
-mkdir RNAseq_analysis_2025_05_21
+mkdir UMIs_analysis_20261104
 ```
 
 ### 5. Move to the your new analysis directory:
 
 ``` bash
-cd /work/folder_of_each_user/RNAseq_analysis_2025_05_21
+cd /work/folder_of_each_user/UMIs_analysis_20261104
 ```
 
 ### 6. Download script to your analysis directory
@@ -83,5 +83,5 @@ cd ..
 ```
 
 ``` bash
-rsync -r RNAseq_analysis_2025_05_21 /mnt/new_home/stamatopoulos_research
+rsync -r UMIs_analysis_20261104 /mnt/new_home/stamatopoulos_research
 ```
