@@ -36,7 +36,7 @@ cd /work/folder_of_each_user/UMIs_analysis_20261104
 You have to **update** with the right path to your **fastq files**.
 
 ``` bash
-o	ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
 ### 7. Remove samples that should not be analyzed:
@@ -54,6 +54,21 @@ o `Ctrl + k`: Removes a whole row
 o `Ctrl + o and Enter`: Saves the modified SampleList
 
 o `Ctrl + x`: Exits and returns to the terminal
+
+
+### 9. Update the runAnalysisTemplateUMIs.sh template
+
+``` bash
+nano runAnalysisTemplateUMIs.sh
+```
+
+### 10.	Apply changes based on the following instructions
+
+o	Update pathToFASTQFiles variable with the right path to your fastq files (DO NOT FORGET TO PLACE "/" AT THE END!!!!!):
+
+``` bash
+pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/"
+```
 
 
 
