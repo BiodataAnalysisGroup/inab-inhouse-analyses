@@ -31,26 +31,15 @@ mkdir UMIs_analysis_20261104
 ``` bash
 cd /work/folder_of_each_user/UMIs_analysis_20261104
 ```
-
-### 6. Download script to your analysis directory
-
-``` bash
-wget https://raw.githubusercontent.com/BiodataAnalysisGroup/RNAseq_analysis/main/bash/star.sh
-```
-
-``` bash
-wget https://raw.githubusercontent.com/BiodataAnalysisGroup/RNAseq_analysis/main/bash/runSTAR.sh 
-```
-
-### 7. Create a SampleList
+### 6. Create a SampleList
 
 You have to **update** with the right path to your **fastq files**.
 
 ``` bash
-ls -la /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+o	ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
-### 8. Remove samples that should not be analyzed:
+### 7. Remove samples that should not be analyzed:
 
 ``` bash
 nano SampleList
@@ -66,13 +55,7 @@ o `Ctrl + o and Enter`: Saves the modified SampleList
 
 o `Ctrl + x`: Exits and returns to the terminal
 
-### 9. Run the analysis:
 
-You have to **update** with the right path.
-
-``` bash
-nohup bash runSTAR.sh /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study SampleList /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/star /mnt/new_home/bio_tmp/HSapRefData/hg38/gencode/gencode.v47.primary_assembly.basic.annotation.gtf 16 &
-```
 
 ### 10. After the analysis is completed
 
