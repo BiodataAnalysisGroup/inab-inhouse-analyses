@@ -90,7 +90,9 @@ more run.sh
 
 o Check if the path to the fastq files is applied correctly
 
-o Check if the right bed file is applied o Press q to exit
+o Check if the right bed file is applied
+
+o Press q to exit
 
 ### 13. Run the analysis
 
