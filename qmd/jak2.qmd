@@ -1,0 +1,129 @@
+---
+title: "How to run **JAK2 analysis** in the computational infrastructure of INAB"
+execute:
+  echo: false
+---
+
+## Steps to run the analysis:
+
+### 1. Log in to the appropriate server:
+
+o 160.40.71.4, ...
+
+### 2. Identify where your NGS results (.fastq files) are located:
+
+o e.g., /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study
+
+### 3. Move to the your working directory:
+
+``` bash
+cd /work/folder_of_each_user
+```
+
+### 4. Create a new analysis directory:
+
+``` bash
+mkdir run_JAK2_analysis_20261104
+```
+
+### 5. Move to the your new analysis directory:
+
+``` bash
+cd /work/folder_of_each_user/run_UMIs_analysis_20261104
+```
+
+### 6. Create a SampleList
+
+You have to **update** with the right path to your **fastq files**.
+
+``` bash
+ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+```
+
+### 7. Remove samples that should not be analyzed:
+
+``` bash
+nano SampleList
+```
+
+In order to **edit** the SampleList use the following:
+
+o `Delete button`: Removes one letter
+
+o `Ctrl + k`: Removes a whole row
+
+o `Ctrl + o and Enter`: Saves the modified SampleList
+
+o `Ctrl + x`: Exits and returns to the terminal
+
+### 9. Update the runAnalysisTemplateUMIs.sh template
+
+``` bash
+nano runAnalysisTemplateUMIs.sh
+```
+
+### 10. Apply changes based on the following instructions
+
+o Update pathToFASTQFiles variable with the right path to your fastq files:
+
+``` bash
+pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/"
+```
+
+o Update bedFileName variable with the desired bed file to use:
+
+``` bash
+bedFileName="/work/precmed/varCall/UMIs_capture_targets_fixed_hg19.bed"
+```
+
+### 11. Create run execution file from template:
+
+``` bash
+bash runAnalysisTemplateUMIs.sh > run.sh
+```
+
+### 12. Final check of the commands that were created
+
+``` bash
+more run.sh
+```
+
+o Check if the path to the fastq files is applied correctly
+
+o Check if the right bed file is applied
+
+o Press q to exit
+
+### 13. Run the analysis
+
+``` bash
+nohup bash run.sh &
+```
+
+o You can check that your analysis is over by visiting your analysis folder and checking that all samples are done.
+
+o You can also type *htop* to see that your process is running.
+
+### 14. After the analysis is completed
+
+Move your folder from **/work** to **/mnt/new_home**
+
+``` bash
+cd ..
+```
+
+``` bash
+rsync -r UMIs_analysis_20261104 /mnt/new_home/stamatopoulos_research
+```
+
+Please use one of the relevant folders to transfer your data:
+
+o /mnt/new_home/Raw-Data/targeted/OncoPMNet/tp53
+
+o /mnt/new_home/Raw-Data/targeted/OncoPMNet/solid
+
+o /mnt/new_home/Raw-Data/targeted/OncoPMNet/haema
+
+o /mnt/new_home/Raw-Data/targeted/OncoPMNet/KLF2-NOTCH2
+
+### 15. Delete your working folder run_UMIs_analysis_20261104
