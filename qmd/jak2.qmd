@@ -37,7 +37,7 @@ cd /work/folder_of_each_user/run_JAK2_analysis_20261104
 You have to **update** with the right path to your **fastq files**.
 
 ``` bash
-ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-JAK2_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+ls –la /mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
 ### 7. Remove samples that should not be analyzed:
@@ -67,7 +67,7 @@ nano runAnalysisTemplate_JAK2.sh
 o Update pathToFASTQFiles variable with the right path to your fastq files:
 
 ``` bash
-pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2022-08-09-JAK2_Diagnosis/"
+pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/"
 ```
 
 o Update bedFileName variable with the desired bed file to use:
