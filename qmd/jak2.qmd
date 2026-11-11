@@ -29,7 +29,7 @@ mkdir run_JAK2_analysis_20261104
 ### 5. Move to the your new analysis directory:
 
 ``` bash
-cd /work/folder_of_each_user/run_UMIs_analysis_20261104
+cd /work/folder_of_each_user/run_JAK2_analysis_20261104
 ```
 
 ### 6. Create a SampleList
@@ -37,7 +37,7 @@ cd /work/folder_of_each_user/run_UMIs_analysis_20261104
 You have to **update** with the right path to your **fastq files**.
 
 ``` bash
-ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
+ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-JAK2_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
 ### 7. Remove samples that should not be analyzed:
@@ -56,10 +56,10 @@ o `Ctrl + o and Enter`: Saves the modified SampleList
 
 o `Ctrl + x`: Exits and returns to the terminal
 
-### 9. Update the runAnalysisTemplateUMIs.sh template
+### 9. Update the runAnalysisTemplate_JAK2.sh template
 
 ``` bash
-nano runAnalysisTemplateUMIs.sh
+nano runAnalysisTemplate_JAK2.sh
 ```
 
 ### 10. Apply changes based on the following instructions
@@ -67,19 +67,19 @@ nano runAnalysisTemplateUMIs.sh
 o Update pathToFASTQFiles variable with the right path to your fastq files:
 
 ``` bash
-pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/"
+pathToFASTQFiles="/mnt/new_home/stamatopoulos_research/2022-08-09-JAK2_Diagnosis/"
 ```
 
 o Update bedFileName variable with the desired bed file to use:
 
 ``` bash
-bedFileName="/work/precmed/varCall/UMIs_capture_targets_fixed_hg19.bed"
+bedFileName="/work/precmed/varCall/JAK2.bed"
 ```
 
 ### 11. Create run execution file from template:
 
 ``` bash
-bash runAnalysisTemplateUMIs.sh > run.sh
+bash runAnalysisTemplate_JAK2.sh > run.sh
 ```
 
 ### 12. Final check of the commands that were created
@@ -113,7 +113,7 @@ cd ..
 ```
 
 ``` bash
-rsync -r UMIs_analysis_20261104 /mnt/new_home/stamatopoulos_research
+rsync -r run_JAK2_analysis_20261104 /mnt/new_home/stamatopoulos_research
 ```
 
 Please use one of the relevant folders to transfer your data:
@@ -126,4 +126,4 @@ o /mnt/new_home/Raw-Data/targeted/OncoPMNet/haema
 
 o /mnt/new_home/Raw-Data/targeted/OncoPMNet/KLF2-NOTCH2
 
-### 15. Delete your working folder run_UMIs_analysis_20261104
+### 15. Delete your working folder run_JAK2_analysis_20261104
