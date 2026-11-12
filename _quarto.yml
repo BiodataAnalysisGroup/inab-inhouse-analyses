@@ -37,11 +37,11 @@ website:
             href: qmd/sars.qmd
           - text: UMIs
             href: qmd/umis.qmd
-      - text: Manuals for analysis
-        menu:
-          - text: JAK2
-            href: qmd/jak2.qmd
-        
+      # - text: Diagnostics
+      #   menu:
+      #     - text: JAK2
+      #       href: qmd/jak2.qmd
+      #   
             
   page-footer: 
     border: true
