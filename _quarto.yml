@@ -40,7 +40,7 @@ website:
       - text: Diagnostics
         menu:
           - text: JAK2
-        #     href: qmd/jak2.qmd
+            href: qmd/jak2.qmd
 
             
   page-footer: 
