@@ -38,8 +38,8 @@ website:
           - text: UMIs
             href: qmd/umis.qmd
       - text: Diagnostics
-        # menu:
-          # - text: JAK2
+        menu:
+          - text: JAK2
         #     href: qmd/jak2.qmd
 
             
