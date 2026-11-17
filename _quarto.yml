@@ -41,6 +41,8 @@ website:
         menu:
           - text: JAK2
             href: qmd/jak2.qmd
+          - text: TP53
+            href: qmd/jak2.qmd
 
             
   page-footer: 
