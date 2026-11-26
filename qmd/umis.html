@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2ff5f306cfaa4ccb5edd2f51abbb115a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f6306dc205c010ef68620df6fa5494e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -230,8 +230,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#move-to-the-your-working-directory" id="toc-move-to-the-your-working-directory" class="nav-link" data-scroll-target="#move-to-the-your-working-directory">3. Move to the your working directory:</a></li>
   <li><a href="#create-a-new-analysis-directory" id="toc-create-a-new-analysis-directory" class="nav-link" data-scroll-target="#create-a-new-analysis-directory">4. Create a new analysis directory:</a></li>
   <li><a href="#move-to-the-your-new-analysis-directory" id="toc-move-to-the-your-new-analysis-directory" class="nav-link" data-scroll-target="#move-to-the-your-new-analysis-directory">5. Move to the your new analysis directory:</a></li>
-  <li><a href="#create-a-samplelist" id="toc-create-a-samplelist" class="nav-link" data-scroll-target="#create-a-samplelist">6. Create a SampleList</a></li>
-  <li><a href="#remove-samples-that-should-not-be-analyzed" id="toc-remove-samples-that-should-not-be-analyzed" class="nav-link" data-scroll-target="#remove-samples-that-should-not-be-analyzed">7. Remove samples that should not be analyzed:</a></li>
+  <li><a href="#copy-scripts-to-your-analysis-directory" id="toc-copy-scripts-to-your-analysis-directory" class="nav-link" data-scroll-target="#copy-scripts-to-your-analysis-directory">6. Copy scripts to your analysis directory:</a></li>
+  <li><a href="#create-a-samplelist" id="toc-create-a-samplelist" class="nav-link" data-scroll-target="#create-a-samplelist">7. Create a SampleList</a></li>
+  <li><a href="#remove-samples-that-should-not-be-analyzed" id="toc-remove-samples-that-should-not-be-analyzed" class="nav-link" data-scroll-target="#remove-samples-that-should-not-be-analyzed">8. Remove samples that should not be analyzed:</a></li>
   <li><a href="#update-the-runanalysistemplateumis.sh-template" id="toc-update-the-runanalysistemplateumis.sh-template" class="nav-link" data-scroll-target="#update-the-runanalysistemplateumis.sh-template">9. Update the runAnalysisTemplateUMIs.sh template</a></li>
   <li><a href="#apply-changes-based-on-the-following-instructions" id="toc-apply-changes-based-on-the-following-instructions" class="nav-link" data-scroll-target="#apply-changes-based-on-the-following-instructions">10. Apply changes based on the following instructions</a></li>
   <li><a href="#create-run-execution-file-from-template" id="toc-create-run-execution-file-from-template" class="nav-link" data-scroll-target="#create-run-execution-file-from-template">11. Create run execution file from template:</a></li>
@@ -287,14 +288,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="move-to-the-your-new-analysis-directory">5. Move to the your new analysis directory:</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /work/folder_of_each_user/run_UMIs_analysis_20261104</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="copy-scripts-to-your-analysis-directory" class="level3">
+<h3 class="anchored" data-anchor-id="copy-scripts-to-your-analysis-directory">6. Copy scripts to your analysis directory:</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /work/precmed/varCall/<span class="pp">*</span>.sh .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /work/precmed/varCall/<span class="pp">*</span>.R .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="create-a-samplelist" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-samplelist">6. Create a SampleList</h3>
+<h3 class="anchored" data-anchor-id="create-a-samplelist">7. Create a SampleList</h3>
 <p>You have to <strong>update</strong> with the right path to your <strong>fastq files</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $9}'</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="at">-F</span> <span class="st">"_R"</span> <span class="st">'{print $1}'</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="op">&gt;</span> SampleList</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $9}'</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="at">-F</span> <span class="st">"_R"</span> <span class="st">'{print $1}'</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="op">&gt;</span> SampleList</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="remove-samples-that-should-not-be-analyzed" class="level3">
-<h3 class="anchored" data-anchor-id="remove-samples-that-should-not-be-analyzed">7. Remove samples that should not be analyzed:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> SampleList</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored" data-anchor-id="remove-samples-that-should-not-be-analyzed">8. Remove samples that should not be analyzed:</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> SampleList</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In order to <strong>edit</strong> the SampleList use the following:</p>
 <p>o <code>Delete button</code>: Removes one letter</p>
 <p>o <code>Ctrl + k</code>: Removes a whole row</p>
@@ -303,37 +309,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="update-the-runanalysistemplateumis.sh-template" class="level3">
 <h3 class="anchored" data-anchor-id="update-the-runanalysistemplateumis.sh-template">9. Update the runAnalysisTemplateUMIs.sh template</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> runAnalysisTemplateUMIs.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> runAnalysisTemplateUMIs.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="apply-changes-based-on-the-following-instructions" class="level3">
 <h3 class="anchored" data-anchor-id="apply-changes-based-on-the-following-instructions">10. Apply changes based on the following instructions</h3>
 <p>o Update pathToFASTQFiles variable with the right path to your fastq files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">pathToFASTQFiles</span><span class="op">=</span><span class="st">"/mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study/"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">pathToFASTQFiles</span><span class="op">=</span><span class="st">"/mnt/new_home/stamatopoulos_research/2025_05_21_ERIC_study"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>o Update bedFileName variable with the desired bed file to use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">bedFileName</span><span class="op">=</span><span class="st">"/work/precmed/varCall/UMIs_capture_targets_fixed_hg19.bed"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">bedFileName</span><span class="op">=</span><span class="st">"/work/precmed/varCall/UMIs_capture_targets_fixed_hg19.bed"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="create-run-execution-file-from-template" class="level3">
 <h3 class="anchored" data-anchor-id="create-run-execution-file-from-template">11. Create run execution file from template:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> runAnalysisTemplateUMIs.sh <span class="op">&gt;</span> run.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> runAnalysisTemplateUMIs.sh <span class="op">&gt;</span> run.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="final-check-of-the-commands-that-were-created" class="level3">
 <h3 class="anchored" data-anchor-id="final-check-of-the-commands-that-were-created">12. Final check of the commands that were created</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">more</span> run.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">more</span> run.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>o Check if the path to the fastq files is applied correctly</p>
 <p>o Check if the right bed file is applied</p>
 <p>o Press q to exit</p>
 </section>
 <section id="run-the-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-analysis">13. Run the analysis</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bash run.sh <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nohup</span> bash run.sh <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>o You can check that your analysis is over by visiting your analysis folder and checking that all samples are done.</p>
 <p>o You can also type <em>htop</em> to see that your process is running.</p>
 </section>
 <section id="after-the-analysis-is-completed" class="level3">
 <h3 class="anchored" data-anchor-id="after-the-analysis-is-completed">14. After the analysis is completed</h3>
 <p>Move your folder from <strong>/work</strong> to <strong>/mnt/new_home</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> UMIs_analysis_20261104 /mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-r</span> UMIs_analysis_20261104 /mnt/new_home/stamatopoulos_research</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Please use one of the relevant folders to transfer your data:</p>
 <p>o /mnt/new_home/Raw-Data/targeted/OncoPMNet/tp53</p>
 <p>o /mnt/new_home/Raw-Data/targeted/OncoPMNet/solid</p>
