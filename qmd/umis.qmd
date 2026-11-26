@@ -32,7 +32,9 @@ mkdir run_UMIs_analysis_20261104
 cd /work/folder_of_each_user/run_UMIs_analysis_20261104
 ```
 
-### 6. Create a SampleList
+### 6. Copy scripts to your analysis directory: 
+
+### 7. Create a SampleList
 
 You have to **update** with the right path to your **fastq files**.
 
@@ -40,7 +42,7 @@ You have to **update** with the right path to your **fastq files**.
 ls –la /mnt/new_home/stamatopoulos_research/2022-08-09-TP53_Diagnosis/ | awk '{print $9}' | awk -F "_R" '{print $1}' | sort | uniq > SampleList
 ```
 
-### 7. Remove samples that should not be analyzed:
+### 8. Remove samples that should not be analyzed:
 
 ``` bash
 nano SampleList
